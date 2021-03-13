@@ -2,6 +2,11 @@
   "name": "d3_practice",
   "version": "1.0.0",
   "main": "index.js",
+  "scripts": {
+    "dev": "next -p 5000",
+    "build": "next build",
+    "start": "next build && next start -p 5000"
+  },
   "license": "MIT",
   "dependencies": {
     "autoprefixer": "^10.2.5",

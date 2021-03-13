@@ -44,10 +44,10 @@ class MyDocument extends Document {
           <meta charSet="utf-8" />
           <meta name="mobile-web-app-capable" content="yes" />
           <meta name="apple-mobile-web-app-capable" content="yes" />
-          <meta name="application-name" content="ofx-exchange-rate-test" />
+          <meta name="application-name" content="d3-practise-collection" />
           <meta
             name="apple-mobile-web-app-title"
-            content="ofx-exchange-rate-test"
+            content="d3-practise-collection"
           />
           <meta name="theme-color" content="#f79e37" />
           <meta name="msapplication-navbutton-color" content="#f79e37" />
@@ -56,14 +56,8 @@ class MyDocument extends Document {
             content="black-translucent"
           />
           <meta name="msapplication-starturl" content="/" />
-          <meta
-            name="description"
-            content="Make fast and secure international money transfers with OFX (formerly OzForex). Register today and save with better exchange rates than the big banks."
-          />
-          <meta
-            name="keywords"
-            content="OFX, International Money Transfers, Currency Exchange, exchange rates"
-          />
+          <meta name="description" content="d3 practice description" />
+          <meta name="keywords" content="d3 practice key words" />
 
           <link
             rel="icon"
