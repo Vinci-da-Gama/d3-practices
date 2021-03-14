@@ -1,6 +1,8 @@
 import Link from "next/link";
 import Head from "next/head";
 // import Router from "next/router";
+import { useEffect } from "react";
+import { useRouter } from "next/router";
 import PropTypes from "prop-types";
 
 import { GlobalStyle } from "./GlobalStyle";
@@ -11,6 +13,18 @@ import { GlobalStyle } from "./GlobalStyle";
  * This is the layout component.
  */
 const Layout = ({ children, title }) => {
+  const router = useRouter();
+  const linkUrls = ["/", "/Masterd3"];
+  // console.log("18 -- router:", router);
+
+  useEffect(() => {
+    console.log("21 -- window.location: ", window.location);
+    // return () => {}
+  }, []);
+
+  const handleActiveLink = (href) =>
+    router.pathname === href || router.asPath === href ? "active-link" : "";
+
   return (
     <>
       <Head>
@@ -21,15 +35,14 @@ const Layout = ({ children, title }) => {
         />
       </Head>
       <header>
-        <Link href="/">
-          <a>React_with_d3</a>
-        </Link>
-        <Link href="/Masterd3">
-          <a>Master_d3</a>
-        </Link>
+        {linkUrls.map((el, idx) => (
+          <Link key={`${el}_${idx}`} href={el}>
+            <a className={`${handleActiveLink(el)}`}>React_with_d3</a>
+          </Link>
+        ))}
       </header>
       <GlobalStyle />
-      <div>{children}</div>
+      <div className="m-10">{children}</div>
     </>
   );
 };
