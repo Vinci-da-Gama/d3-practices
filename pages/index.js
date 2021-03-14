@@ -1,5 +1,5 @@
-import { useState } from "react";
-// import styled from "styled-components";
+import { useState, useEffect } from "react";
+import { json } from "d3";
 
 import {
   Layout,
@@ -9,12 +9,21 @@ import {
   S4Chart,
   S5Chart,
 } from "../components";
+import { Urls } from "../consts/Urls";
 
 /**
  * This is the Home component.
  */
-const Home = () => {
+const Home = ({ s5CharChildren }) => {
   const [gender, setGender] = useState("Men");
+  const [chartData, setChartData] = useState([]);
+  const [selectedName, setSelectedName] = useState("");
+
+  useEffect(() => {
+    setChartData(s5CharChildren);
+    // return () => {}
+  }, []);
+
   return (
     <Layout title={"React with d3"}>
       <div>
@@ -47,10 +56,22 @@ const Home = () => {
       </div>
       <div>
         <p>S5 chart</p>
-        <S5Chart />
+        {s5CharChildren && s5CharChildren.length > 0 && (
+          <S5Chart
+            chartData={chartData}
+            setChartData={setChartData}
+            selectedName={selectedName}
+            setSelectedName={setSelectedName}
+          />
+        )}
       </div>
     </Layout>
   );
+};
+
+Home.getInitialProps = async (ctx) => {
+  const s5CharChildren = await json(Urls.children);
+  return { s5CharChildren };
 };
 
 export default Home;
