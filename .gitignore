@@ -1,5 +1,8 @@
 node_modules
-static\workbox
+static
+pages
 .next
 .vscode
 **/*.txt
+package.json
+yarn.lock

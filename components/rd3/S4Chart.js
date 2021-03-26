@@ -13,13 +13,10 @@ const S4Chart = ({ gender }) => {
 
   useEffect(() => {
     /**
-     * Below 2 if must placed at the beginning,
+     * Below remove func must be placed at the beginning,
      * place it later, then del new created svg
      */
-    if (gender !== "Men") {
-      d3.selectAll("#s4-chart-menwomen").remove();
-    }
-    if (gender !== "Women") {
+    if (gender) {
       d3.selectAll("#s4-chart-menwomen").remove();
     }
 
