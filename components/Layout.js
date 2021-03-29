@@ -14,11 +14,19 @@ import { GlobalStyle } from "./GlobalStyle";
  */
 const Layout = ({ children, title }) => {
   const router = useRouter();
-  const linkUrls = ["/", "/Masterd3"];
-  // console.log("18 -- router:", router);
+  const linkUrls = [
+    {
+      url: "/",
+      label: "React_with_d3",
+    },
+    {
+      url: "/Masterd3",
+      label: "Master_d3",
+    },
+  ];
 
   useEffect(() => {
-    console.log("21 -- window.location: ", window.location);
+    console.log("29 -- window.location: ", window.location);
     // return () => {}
   }, []);
 
@@ -36,8 +44,8 @@ const Layout = ({ children, title }) => {
       </Head>
       <header>
         {linkUrls.map((el, idx) => (
-          <Link key={`${el}_${idx}`} href={el}>
-            <a className={`${handleActiveLink(el)}`}>React_with_d3</a>
+          <Link key={`${el.label}_${idx}`} href={el.url}>
+            <a className={`${handleActiveLink(el.url)}`}>{el.label}</a>
           </Link>
         ))}
       </header>
