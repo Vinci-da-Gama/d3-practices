@@ -6,8 +6,11 @@ import S4Chart from "./rd3/S4Chart";
 import S5Chart from "./rd3/S5Chart";
 import Md3Basic from "./md3/Md3Basic";
 import S2Circles from "./md3/S2Circles";
-import S3BuildingCharts from './md3/S3BuildingCharts';
-import S5DynamicData from './md3/S5DynamicData';
+import S3BuildingCharts from "./md3/S3BuildingCharts";
+import S5DynamicData from "./md3/S5DynamicData";
+import S5Dots from "./md3/S5Dots";
+import S8ChoroplethMap from "./md3/S8ChoroplethMap";
+import S8ForceChart from "./md3/S8ForceChart";
 
 export {
   Layout,
@@ -19,5 +22,8 @@ export {
   Md3Basic,
   S2Circles,
   S3BuildingCharts,
-  S5DynamicData
+  S5DynamicData,
+  S5Dots,
+  S8ChoroplethMap,
+  S8ForceChart,
 };
